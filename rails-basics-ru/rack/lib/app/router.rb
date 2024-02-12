@@ -11,6 +11,7 @@ class Router
       [200, {}, ['Hello, World!']]
     when '/about'
       [200, {}, ['About page']]
+
     else
       [404, {}, ['404 Not Found']]
     end
