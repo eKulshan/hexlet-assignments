@@ -6,3 +6,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+articles = []
+0.upto(10) { |i| articles << { title: "title_#{i}", body: "body_#{i}" } }
+Article.create(articles)
