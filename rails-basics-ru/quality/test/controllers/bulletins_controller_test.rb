@@ -22,7 +22,7 @@ class BulletinsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'opens one note page with fixture' do
-    bulletin = bulletins(:bulletin_1)
+    bulletin = bulletins(:one)
     get bulletin_url(bulletin)
     assert_response :success
     assert_select 'h1', 'Bulletin page'
