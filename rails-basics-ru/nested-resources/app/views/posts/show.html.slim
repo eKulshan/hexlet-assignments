@@ -1,0 +1,19 @@
+- content_for :title do
+  = @post.title
+p
+  strong.me-2 Body:
+  = @post.body
+/ BEGIN
+hr
+- @post.post_comments.each do |comment|
+  p = comment.body
+  = link_to 'Edit', edit_post_comment_path(comment), class: 'btn btn-outline-primary me-2'
+  = link_to 'Delete', post_comment_path(comment), class: 'btn btn-outline-danger', data: {turbo_method: :delete, turbo_confirm: 'Are you sure?'}
+/ END
+hr
+== render 'post_comments/form', post_comment: @post.post_comments.build, url: post_post_comments_path(@post)
+
+
+.d-flex
+  = link_to 'Edit', edit_post_path(@post), class: 'btn btn-outline-primary me-2'
+  = link_to 'Back', :back, class: 'btn btn-outline-primary'
